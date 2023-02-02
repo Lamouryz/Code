@@ -1,0 +1,1 @@
+This folder is used as model's checkpoints storage for the result files.

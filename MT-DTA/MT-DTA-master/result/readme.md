@@ -1,0 +1,1 @@
+This folder is used as output storage for the result files.

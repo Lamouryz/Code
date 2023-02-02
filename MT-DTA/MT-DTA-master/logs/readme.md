@@ -1,0 +1,1 @@
+This folder is used as the terminal's all outputs storage location for the model log files.

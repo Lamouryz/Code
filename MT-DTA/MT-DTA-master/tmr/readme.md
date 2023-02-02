@@ -1,0 +1,1 @@
+This folder is used as the output storage location for the test results.
