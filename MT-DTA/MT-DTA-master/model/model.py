@@ -98,7 +98,7 @@ class CasMol(nn.Module):
             nn.Dropout(0.2),
             nn.Conv1d(num_filters * 2, num_filters * 6, k_size, 1, k_size//2)
         )
-        self.TransMo = Trans(num_filters)
+        self.TransMo = Trans(num_filters*3)
         self.out = nn.AdaptiveAvgPool1d(1)
         self.lineLayeru = nn.Sequential(
             nn.Linear(num_filters * 3, num_filters * 3),
@@ -116,7 +116,7 @@ class CasMol(nn.Module):
         return eps.mul(std).add_(mean)
 
     def forward(self, x):
-        x = self.firstCn(x)
+        x = self.FCn(x)
         out, gate = x.split(int(x.size(1) / 2), 1)
         x = out * torch.sigmoid(gate)
         x = self.SCn(x)
@@ -125,6 +125,7 @@ class CasMol(nn.Module):
         x = self.TCn(x)
         out, gate = x.split(int(x.size(1) / 2), 1)
         x = out * torch.sigmoid(gate)
+        x = self.TransMo(x)
         output = self.out(x)
         output, kcont, poscont, vcont = self.TransMo(output)
         output = output.squeeze()
@@ -222,8 +223,3 @@ class net(nn.Module):
 # if __name__ == "__main__":
 #
 #     net()
-#     print('111')
-
-
-
-
