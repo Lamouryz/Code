@@ -1,4 +1,4 @@
-### Brain Tumor Segmentation Based on the Fusion of Deep Semantics and Edge Information in Multimodal MRI
+### Associative learning mechanism for drug-target interaction prediction
 
 -----------
 
@@ -8,7 +8,7 @@ The semantic segmentation part consists of the improved Swin Transformer, and th
 
 ----------
 
-The dataset used in this paper is BraTS2018，2019 and 2020. The datasets can be found in kaggle, using the training set part.
+The dataset used in this paper is KIBA，Davis. The datasets can be found in data files package.
 
 #### Requirement
 
