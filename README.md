@@ -8,7 +8,7 @@ The molecular characterization learning part is composed of an improved variatio
 
 ----------
 
-The dataset used in this paper is KIBA，Davis. The datasets can be found in data files package.
+The dataset used in this paper is KIBA，Davis. The way to obtain the above datasets is given in the data file.
 
 #### Requirement
 
