@@ -2,7 +2,7 @@
 
 -----------
 
-The semantic segmentation part consists of the improved Swin Transformer, and the edge detection part consists of convolutional layers and ESAB modules.The fusion part uses the method of graph convolution to fuse semantic features and edge features.
+The molecular characterization learning part is composed of an improved variational automatic encoder, and the feature extraction part is composed of convolution layer and transformer module. The interactive learning part uses the method of self-attention to fuse the dual-channel features. Thanks to variational automatic coding, new information can be obtained by using similar structure as decoder.
 
 #### DataSets
 
