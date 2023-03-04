@@ -237,14 +237,14 @@ class net_reg(nn.Module):
 class net(nn.Module):
     def __init__(self, FLAGS, num_fil, len_fild, len_filp):
         super(net, self).__init__()
-        self.embedd = nn.Embedding(64, 128)
-        self.embedp = nn.Embedding(25, 128)
+        self.embedd = nn.Embedding(FLAGS.charsmiset_size, 128)
+        self.embedp = nn.Embedding(FLAGS.charseqset_size, 128)
         self.CNATDMo = Muctfu(num_fil, len_fild)
         self.CNATPMo = Muctfu(num_fil, len_filp)
         self.cros = Mutcros(num_fil)
         self.prRe = net_reg(num_fil)
-        self.Decoderd = decoder(FLAGS.max_smi_len, num_fil, len_fild, 64)
-        self.Decoderp = decoder(FLAGS.max_seq_len, num_fil, len_filp, 25)
+        self.Decoderd = decoder(FLAGS.max_smi_len, num_fil, len_fild, FLAGS.charsmiset_size)
+        self.Decoderp = decoder(FLAGS.max_seq_len, num_fil, len_filp, FLAGS.charseqset_size)
 
     def forward(self, x, y, FLAGS, num_fil, len_fild, len_filp):
         init_X = Variable(x.long()).cuda()
