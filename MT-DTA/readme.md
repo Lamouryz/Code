@@ -1,4 +1,4 @@
-### Readme For 'Associative learning mechanism for drug-target interaction prediction'
+### Intro
 
 -----------
 
